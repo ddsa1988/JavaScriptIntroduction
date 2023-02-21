@@ -9,7 +9,7 @@ let numbers = [];
 while (true) {
     maxNumbers = Number(prompt("How many numbers would you like to sum? "));
 
-    if (Number.isFinite(maxNumbers) && maxNumbers > 0) {
+    if (Number.isInteger(maxNumbers) && maxNumbers > 0) {
         break;
     }
 
@@ -19,9 +19,10 @@ while (true) {
 console.log();
 
 while (counter < maxNumbers) {
-    numbers[counter] = Number(prompt(`Type number ${counter + 1}: `));
+    const number = Number(prompt(`Type number ${counter + 1}: `));
 
-    if (Number.isFinite(numbers[counter])) {
+    if (Number.isFinite(numbers)) {
+        numbers.push(number);
         counter++;
     } else {
         console.log("Invalid number!");
