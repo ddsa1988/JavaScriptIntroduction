@@ -2,8 +2,6 @@
 
 // Book page: 56
 
-// Read model and price of a vehicle. Show 50% of the value and the rest in 12x.
-
 const inVehicle = document.querySelector("#inVehicle");
 const inPrice = document.querySelector("#inPrice");
 const inSubmit = document.querySelector("#inSubmit");
@@ -24,7 +22,9 @@ inSubmit.addEventListener("click", (event) => {
         ((price - firstPayment) / numberOfPayments).toFixed(2)
     );
 
-    console.log(vehicle);
-    console.log(firstPayment);
-    console.log(otherPayments);
+    if (vehicle !== "" && price > 0) {
+        outResp1.innerText = `Sale: ${vehicle}`;
+        outResp2.innerText = `First Payment R$: ${firstPayment}`;
+        outResp3.innerText = `+ ${numberOfPayments} of R$: ${otherPayments}`;
+    }
 });
