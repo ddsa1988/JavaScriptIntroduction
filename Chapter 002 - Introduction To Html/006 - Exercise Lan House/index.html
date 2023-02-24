@@ -4,21 +4,21 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Example Restaurant</title>
+        <title>Lan House</title>
         <script defer src="main.js" type="module"></script>
     </head>
     <body>
-        <h1>Restaurant</h1>
+        <h1>Lan House</h1>
         <form>
             <p>
-                Price kilo R$:
-                <input type="number" id="inKilo" min="0" step="0.01" required />
+                <label id="inMinutes">Price for 15 minutes R$:</label>
+                <input type="number" id="inPrice" min="1" required />
             </p>
             <p>
-                Consumption Client (gr):
-                <input type="number" id="inConsume" min="0" required />
+                Time of use in minutes:
+                <input type="number" id="inTime" min="15" step="1" required />
             </p>
-            <input type="submit" id="inSubmit" value="Calculate Price" />
+            <input type="submit" id="inSubmit" value="Calculate" />
         </form>
         <h3 id="outResp"></h3>
     </body>

@@ -5,8 +5,9 @@
 const inMedicine = document.querySelector("#inMedicine");
 const inPrice = document.querySelector("#inPrice");
 const inSubmit = document.querySelector("#inSubmit");
-const resp1 = document.querySelector("#resp1");
-const resp2 = document.querySelector("#resp2");
+const outResp1 = document.querySelector("#outResp1");
+const outResp2 = document.querySelector("#outResp2");
+
 const numberOfItems = 2;
 
 inSubmit.addEventListener("click", function (event) {
@@ -18,6 +19,8 @@ inSubmit.addEventListener("click", function (event) {
     const total = Math.trunc(sum);
     const discount = Number((sum - total).toFixed(2));
 
-    resp1.innerText = `Medicine: ${medicineName}`;
-    resp2.innerText = `Sale: ${numberOfItems} items for R$ ${total}. Discount of R$ ${discount}!`;
+    if (medicineName !== "" && price > 0) {
+        outResp1.innerText = `Medicine: ${medicineName}`;
+        outResp2.innerText = `Sale: ${numberOfItems} items for R$ ${total}. Discount of R$ ${discount}!`;
+    }
 });

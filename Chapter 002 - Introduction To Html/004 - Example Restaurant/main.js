@@ -5,7 +5,7 @@
 const inPriceKilo = document.querySelector("#inKilo");
 const inConsume = document.querySelector("#inConsume");
 const inSubmit = document.querySelector("#inSubmit");
-const resp = document.querySelector("h3");
+const outResp = document.querySelector("#outResp");
 
 inSubmit.addEventListener("click", (event) => {
     event.preventDefault();
@@ -15,6 +15,6 @@ inSubmit.addEventListener("click", (event) => {
     const total = Number(((price / 1000) * consume).toFixed(2));
 
     if (total > 0) {
-        resp.innerText = `Value to pay R$: ${total}`;
+        outResp.innerText = `Value to pay R$: ${total}`;
     }
 });
