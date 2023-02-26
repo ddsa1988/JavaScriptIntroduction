@@ -21,7 +21,7 @@ console.log();
 while (counter < maxNumbers) {
     const number = Number(prompt(`Type number ${counter + 1}: `));
 
-    if (Number.isFinite(numbers)) {
+    if (Number.isFinite(number)) {
         numbers.push(number);
         counter++;
     } else {
