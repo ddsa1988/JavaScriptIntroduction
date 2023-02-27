@@ -13,7 +13,7 @@ inResult.addEventListener("click", (event) => {
     const name = String(inName.value).trim();
     const grade1 = Number(inGrade1.value);
     const grade2 = Number(inGrade2.value);
-    const testData =
+    const checkData =
         name !== "" &&
         Number.isFinite(grade1) &&
         grade1 >= 0 &&
@@ -22,7 +22,7 @@ inResult.addEventListener("click", (event) => {
         grade2 >= 0 &&
         grade2 <= 10;
 
-    if (testData) {
+    if (checkData) {
         const result = (grade1 + grade2) / 2;
         let text = "";
         let color = "";
