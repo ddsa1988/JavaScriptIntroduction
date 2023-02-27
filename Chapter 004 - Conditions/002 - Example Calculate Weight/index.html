@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <script defer src="main.js" type="module"></script>
+    </head>
+    <body>
+        <img src="balanca.jpg" alt="Weight Device" />
+        <h1>Calculate Ideal Weight</h1>
+        <form>
+            <p>
+                Name:
+                <input type="text" id="inName" required />
+            </p>
+            <p>
+                Sex:
+                <input type="radio" name="sex" id="inMale" required />
+                Male
+                <input type="radio" name="sex" id="inFemale" required />
+                Female
+            </p>
+            <p>
+                Height:
+                <input
+                    type="number"
+                    id="inHight"
+                    min="0"
+                    step="0.01"
+                    required
+                />
+            </p>
+            <input type="submit" id="inSubmit" value="Calculate" />
+            <input type="reset" id="inReset" value="Clear Fields" />
+        </form>
+    </body>
+</html>
