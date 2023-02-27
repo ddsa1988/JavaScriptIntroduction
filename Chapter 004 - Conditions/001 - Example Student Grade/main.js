@@ -3,17 +3,17 @@
 const inName = document.querySelector("#inName");
 const inGrade1 = document.querySelector("#inGrade1");
 const inGrade2 = document.querySelector("#inGrade2");
-const inResult = document.querySelector("#inResult");
+const inForm = document.querySelector("form");
 const outResul1 = document.querySelector("#outResult1");
 const outResul2 = document.querySelector("#outResult2");
 
-inResult.addEventListener("click", (event) => {
+inForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const name = String(inName.value).trim();
     const grade1 = Number(inGrade1.value);
     const grade2 = Number(inGrade2.value);
-    const checkData =
+    const isDataValid =
         name !== "" &&
         Number.isFinite(grade1) &&
         grade1 >= 0 &&
@@ -22,7 +22,7 @@ inResult.addEventListener("click", (event) => {
         grade2 >= 0 &&
         grade2 <= 10;
 
-    if (checkData) {
+    if (isDataValid) {
         const result = (grade1 + grade2) / 2;
         let text = "";
         let color = "";

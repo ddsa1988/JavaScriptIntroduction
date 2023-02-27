@@ -3,14 +3,16 @@
 //Book page: 45
 
 const inName = document.querySelector("#inName");
-const submit = document.getElementById("inSubmit");
-const answer = document.querySelector("h3");
+const inForm = document.querySelector("form");
+const outResponse = document.querySelector("h3");
 
-button.addEventListener("click", function (event) {
+inForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const name = String(inName.value).trim();
-    answer.innerText = "";
+    outResponse.innerText = "";
 
-    if (name !== "") answer.innerText = `Hello ${name}.`;
+    if (name !== "") {
+        outResponse.innerText = `Hello ${name}.`;
+    }
 });

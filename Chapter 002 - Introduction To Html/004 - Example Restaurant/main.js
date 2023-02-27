@@ -4,10 +4,10 @@
 
 const inPriceKilo = document.querySelector("#inKilo");
 const inConsume = document.querySelector("#inConsume");
-const inSubmit = document.querySelector("#inSubmit");
+const inForm = document.querySelector("form");
 const outResp = document.querySelector("#outResp");
 
-inSubmit.addEventListener("click", (event) => {
+inForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const price = Number(inPriceKilo.value);

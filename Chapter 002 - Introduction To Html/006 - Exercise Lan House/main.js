@@ -5,14 +5,14 @@
 const inMinutes = document.querySelector("#inMinutes");
 const inPrice = document.querySelector("#inPrice");
 const inTime = document.querySelector("#inTime");
-const inSubmit = document.querySelector("#inSubmit");
+const inForm = document.querySelector("form");
 const outResp = document.querySelector("#outResp");
 
 const minutes = 15;
 
 inMinutes.innerText = `Price for ${minutes} minutes R$:`;
 
-inSubmit.addEventListener("click", (event) => {
+inForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const price = Number(inPrice.value);

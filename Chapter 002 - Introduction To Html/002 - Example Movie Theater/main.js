@@ -4,11 +4,11 @@
 
 const inMovieName = document.querySelector("#inMovieName");
 const inRunningTime = document.querySelector("#inRunningTime");
-const inSubmit = document.querySelector("#inSubmit");
+const inForm = document.querySelector("form");
 const outMovieName = document.querySelector("h3");
 const outRunnigTime = document.querySelector("h4");
 
-inSubmit.addEventListener("click", (event) => {
+inForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const movie = String(inMovieName.value).trim();

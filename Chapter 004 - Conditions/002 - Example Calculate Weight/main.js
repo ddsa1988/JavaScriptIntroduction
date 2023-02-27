@@ -4,8 +4,7 @@ const inName = document.querySelector("#inName");
 const inMale = document.querySelector("#inMale");
 const inFemale = document.querySelector("#inFemale");
 const inHeight = document.querySelector("#inHeight");
-const inSubmit = document.querySelector("#inSubmit");
-const inReset = document.querySelector("#inReset");
+const inForm = document.querySelector("form");
 const outResponse = document.querySelector("#outResponse");
 
 function init() {
@@ -14,7 +13,7 @@ function init() {
     inName.focus();
 }
 
-inSubmit.addEventListener("click", function (event) {
+inForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const name = String(inName.value).trim();
@@ -22,19 +21,19 @@ inSubmit.addEventListener("click", function (event) {
     const isMale = inMale.checked;
     const isFemale = inFemale.checked;
     const value = isMale ? 22 : isFemale ? 21 : 0;
-    const checkData =
+    const isDataValid =
         name !== "" &&
         Number.isFinite(height) &&
         height > 0 &&
         height < 3 &&
         value !== 0;
 
-    if (checkData) {
+    if (isDataValid) {
         const result = value * (height * 2);
-        outResponse.textContent = `${name}: Your ideal weight is ${result} kg.`;
+        outResponse.innerText = `${name}: Your ideal weight is ${result} kg.`;
     }
 });
 
-inReset.addEventListener("click", (event) => {
+inForm.addEventListener("reset", (event) => {
     init();
 });

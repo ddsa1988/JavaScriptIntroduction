@@ -4,13 +4,13 @@
 
 const inMedicine = document.querySelector("#inMedicine");
 const inPrice = document.querySelector("#inPrice");
-const inSubmit = document.querySelector("#inSubmit");
+const inForm = document.querySelector("form");
 const outResp1 = document.querySelector("#outResp1");
 const outResp2 = document.querySelector("#outResp2");
 
 const numberOfItems = 2;
 
-inSubmit.addEventListener("click", function (event) {
+inForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const medicineName = String(inMedicine.value).trim();

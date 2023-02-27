@@ -4,7 +4,7 @@
 
 const inProduct = document.querySelector("#inProduct");
 const inPrice = document.querySelector("#inPrice");
-const inSubmit = document.querySelector("#inSubmit");
+const inForm = document.querySelector("form");
 const outResp1 = document.querySelector("#outResp1");
 const outResp2 = document.querySelector("#outResp2");
 
@@ -12,7 +12,7 @@ const itemsWithoutDiscount = 2;
 const itemsWithDiscount = 1;
 const discount = 50 / 100;
 
-inSubmit.addEventListener("click", function (event) {
+inForm.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const product = String(inProduct.value).trim();
