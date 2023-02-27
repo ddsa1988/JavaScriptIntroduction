@@ -1,9 +1,20 @@
+:root {
+    --imgHeight: 200px;
+    --imgWidth: 250px;
+    --textMargin: 260px;
+}
+
 img {
     float: left;
-    height: 200px;
-    width: 250px;
+    height: var(--imgHeight);
+    width: var(--imgWidth);
 }
 
 h1 {
     border-bottom-style: inset;
+    margin-left: var(--textMargin);
+}
+
+form {
+    margin-left: var(--textMargin);
 }
