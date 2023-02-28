@@ -1,28 +1,10 @@
 "use strict";
 
 const consoleRead = require("prompt-sync")();
-
 const maxTimes = 6;
 const minValue = 20;
 
 let price = 0;
-
-function getNumberOfTimes(price, maxTimes, minValue) {
-    function numberOfTimes(value, maxTimes) {
-        const result = value / maxTimes;
-        if (result < minValue) {
-            return numberOfTimes(value, maxTimes - 1);
-        } else {
-            return [result, maxTimes];
-        }
-    }
-
-    if (price > minValue) {
-        return numberOfTimes(price, maxTimes, minValue);
-    } else {
-        return [price, 1];
-    }
-}
 
 while (true) {
     price = Number(consoleRead("Purchase Price R$: "));
@@ -34,6 +16,9 @@ while (true) {
     }
 }
 
-const [finalValue, numberOfTimes] = getNumberOfTimes(price, maxTimes, minValue);
+const aux = Math.floor(price / minValue);
+const numberOfTimes = aux === 0 ? 1 : aux > maxTimes ? 6 : aux;
+const finalValue = price / numberOfTimes;
+
 console.log(`Value R$: ${finalValue.toFixed(2)}`);
 console.log(`Number of Times: ${numberOfTimes}`);
