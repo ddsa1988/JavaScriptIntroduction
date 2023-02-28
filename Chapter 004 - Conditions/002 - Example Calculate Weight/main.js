@@ -29,8 +29,10 @@ inForm.addEventListener("submit", function (event) {
         value !== 0;
 
     if (isDataValid) {
-        const result = value * (height * 2);
-        outResponse.innerText = `${name}: Your ideal weight is ${result} kg.`;
+        const result = value * Math.pow(height, 2);
+        outResponse.innerText = `${name}: Your ideal weight is ${result.toFixed(
+            2
+        )} kg.`;
     }
 });
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <script defer src="main.js" type="module"></script>
+    </head>
+    <body>
+        <h1>Cash Machine</h1>
+        <form>
+            <p>
+                Withdraw Value R$:
+                <input
+                    type="number"
+                    id="inNumber"
+                    min="10"
+                    step="10"
+                    required
+                />
+            </p>
+            <input type="submit" id="inSubmit" value="Show Bills" />
+        </form>
+        <h3 id="outResponse1"></h3>
+        <h3 id="outResponse2"></h3>
+        <h3 id="outResponse3"></h3>
+    </body>
+</html>
