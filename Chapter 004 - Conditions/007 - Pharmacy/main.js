@@ -17,7 +17,7 @@ while (true) {
 }
 
 const aux = Math.floor(price / minValue);
-const numberOfTimes = aux === 0 ? 1 : aux > maxTimes ? 6 : aux;
+const numberOfTimes = aux === 0 ? 1 : aux > maxTimes ? maxTimes : aux;
 const finalValue = price / numberOfTimes;
 
 console.log(`Value R$: ${finalValue.toFixed(2)}`);
