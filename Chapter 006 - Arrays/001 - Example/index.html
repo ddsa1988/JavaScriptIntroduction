@@ -5,7 +5,23 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
         <script defer src="main.js" type="module"></script>
     </head>
-    <body></body>
+    <body>
+        <form>
+            <p>
+                Pacient:
+                <input type="text" id="inPacient" required autofocus />
+                <input type="submit" id="inSubmit" value="Add" />
+                <input type="button" id="inBtUrgent" value="Urgent" />
+                <input type="button" id="inBtAttend" value="Attend" />
+            </p>
+        </form>
+        <h3>
+            In Customer Service:
+            <span id="outResponseName" class="font-blue"></span>
+        </h3>
+        <pre id="outResponseList"></pre>
+    </body>
 </html>
