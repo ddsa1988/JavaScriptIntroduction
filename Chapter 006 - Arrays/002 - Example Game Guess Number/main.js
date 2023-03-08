@@ -40,7 +40,7 @@ const wrongNumber = (number, list) => {
     const counter = CHANCES - list.length;
 
     inForm.inNumber.value = "";
-    outErrors.innerText = `(${list.join(", ")})`;
+    outErrors.innerText = `${list.length} (${list.join(", ")})`;
     outChances.innerText = counter;
 
     if (counter <= 0) {
@@ -59,11 +59,9 @@ const lostGame = () => {
 };
 
 const tip = (number, guessNumber) => {
-    if (number < guessNumber) {
-        outTips.innerText = "You have to guess a higher number!";
-    } else if (number > guessNumber) {
-        outTips.innerText = "You have to guess a lower number!";
-    }
+    const text = number < guessNumber ? "higher" : "lower";
+
+    outTips.innerText = `You have to guess a ${text} number!`;
 };
 
 inForm.addEventListener("submit", function (event) {
