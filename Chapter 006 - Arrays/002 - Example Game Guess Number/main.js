@@ -9,7 +9,7 @@ const CHANCES = 6;
 const MIN_RANDOM = 1;
 const MAX_RANDOM = 100;
 
-const errors = new Set();
+const errors = [];
 let randomNumber = 0;
 
 const initGame = () => {
@@ -17,7 +17,7 @@ const initGame = () => {
         Math.random() * (MAX_RANDOM - MIN_RANDOM + 1) + MIN_RANDOM
     );
 
-    errors.clear();
+    errors.length = 0;
 
     inForm.inNumber.disabled = false;
     inForm.inNumber.value = "";
@@ -35,12 +35,12 @@ const wonGame = () => {
     outTips.innerText = `Congratulations!!! You won! The number was ${randomNumber}.`;
 };
 
-const wrongNumber = (number, setList) => {
-    const counter = CHANCES - setList.size;
-    setList.add(number);
+const wrongNumber = (number, list) => {
+    list.push(number);
+    const counter = CHANCES - list.length;
 
     inForm.inNumber.value = "";
-    outErrors.innerText = `(${[...setList].join(", ")})`;
+    outErrors.innerText = `(${list.join(", ")})`;
     outChances.innerText = counter;
 
     if (counter <= 0) {
@@ -76,7 +76,7 @@ inForm.addEventListener("submit", function (event) {
         if (number === randomNumber) {
             wonGame(number);
         } else {
-            if (errors.has(number)) {
+            if (errors.includes(number)) {
                 outTips.innerText = `You have alread tried the number ${number}. Try another!`;
             } else {
                 wrongNumber(number, errors);
