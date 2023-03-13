@@ -9,6 +9,7 @@ const clearFields = () => {
     inForm.inModel.focus();
     inForm.inModel.value = "";
     inForm.inPrice.value = "";
+    outResponse.innerText = "";
 };
 
 inForm.addEventListener("submit", function (event) {
@@ -27,3 +28,28 @@ inForm.addEventListener("submit", function (event) {
         inForm.inBtList.dispatchEvent(new Event("click"));
     }
 });
+
+inForm.inBtList.addEventListener("click", () => {
+    if (cars.length > 0) {
+        let text = "List of cars to be sold: \n" + "-".repeat(40) + "\n";
+
+        // text = cars.reduce(
+        //     (previousValue, currentValue) =>
+        //         previousValue +
+        //         `${currentValue.model} - R$: ${currentValue.price} \n`,
+        //     text
+        // );
+
+        for (const { model, price } of cars) {
+            text += `${model} - R$: ${price} \n`;
+        }
+
+        outResponse.innerText = text;
+    } else {
+        outResponse.innerText = "No car is in the list!";
+    }
+});
+
+inForm.inBtFilter.addEventListener("click", () => {});
+
+inForm.inBtSimulate.addEventListener("click", () => {});
