@@ -46,10 +46,48 @@ inForm.inBtList.addEventListener("click", () => {
 
         outResponse.innerText = text;
     } else {
-        outResponse.innerText = "No car is in the list!";
+        outResponse.innerText = "There are no cars to list!";
     }
 });
 
-inForm.inBtFilter.addEventListener("click", () => {});
+inForm.inBtFilter.addEventListener("click", () => {
+    if (cars.length > 0) {
+        const filterPrice = Number(window.prompt("Type the value: "));
+        const isPriceValid = Number.isFinite(filterPrice) && filterPrice > 0;
 
-inForm.inBtSimulate.addEventListener("click", () => {});
+        if (isPriceValid) {
+            const filteredCars = cars.filter(({ model, price }) => {
+                return price <= filterPrice;
+            });
+
+            if (filteredCars.length > 0) {
+                let text = "List of filtered cars: \n" + "-".repeat(40) + "\n";
+
+                for (const { model, price } of filteredCars) {
+                    text = text.concat(`${model} - R$: ${price} \n`);
+                }
+                outResponse.innerText = text;
+            } else {
+                outResponse.innerText = "There are no cars below this price!";
+            }
+        } else {
+            window.alert("Invalid number!");
+        }
+    } else {
+        outResponse.innerText = "There are no cars to list!";
+    }
+});
+
+inForm.inBtSimulate.addEventListener("click", () => {
+    if (cars.length > 0) {
+        const price = Number(window.prompt("Type the value: "));
+        const isPriceValid = Number.isFinite(price) && price > 0;
+
+        if (isPriceValid) {
+        } else {
+            window.alert("Invalid number!");
+        }
+    } else {
+        outResponse.innerText = "There are no cars to list!";
+    }
+});
