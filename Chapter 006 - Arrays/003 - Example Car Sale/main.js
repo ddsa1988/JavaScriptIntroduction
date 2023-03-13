@@ -41,7 +41,7 @@ inForm.inBtList.addEventListener("click", () => {
         // );
 
         for (const { model, price } of cars) {
-            text += `${model} - R$: ${price} \n`;
+            text = text.concat(`${model} - R$: ${price} \n`);
         }
 
         outResponse.innerText = text;
