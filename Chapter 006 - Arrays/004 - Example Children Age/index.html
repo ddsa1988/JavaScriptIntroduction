@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+        <script defer src="main.js" type="module"></script>
+    </head>
+    <body>
+        <h1>Children Age</h1>
+        <form>
+            <p>
+                Child Name:
+                <input type="text" id="inName" required autofocus />
+            </p>
+            <p>
+                Age:
+                <input
+                    type="number"
+                    id="inAge"
+                    min="0"
+                    max="16"
+                    step="1"
+                    required
+                />
+                <input type="submit" id="inBtAdd" value="Add" />
+            </p>
+            <input type="button" id="inBtList" value="List All" />
+            <input type="button" id="inBtListAge" value="List By Age" />
+        </form>
+        <pre id="outResponse"></pre>
+    </body>
+</html>

@@ -6,9 +6,8 @@ const outResponse = document.querySelector("pre");
 const cars = [];
 
 const clearFields = () => {
+    inForm.reset();
     inForm.inModel.focus();
-    inForm.inModel.value = "";
-    inForm.inPrice.value = "";
     outResponse.innerText = "";
 };
 
