@@ -29,16 +29,20 @@ while (true) {
     }
 }
 
-const maxGrades = grades.filter(({ name, grade }) => {
-    return grade >= 7;
-});
+console.log("-".repeat(40));
 
-if (maxGrades.length > 0) {
-    const maxGrade = maxGrades.reduce((previousValue, { name, grade }) => {
-        return Math.max(previousValue, grade);
-    }, 0);
+const maxGrade = grades.reduce((previousValue, { name, grade }) => {
+    return Math.max(previousValue, grade);
+}, 0);
 
-    console.log(`The higher grade was ${maxGrade.toFixed(2)}.`);
+console.log(`The higher grade was ${maxGrade.toFixed(2)}.`);
+
+if (maxGrade >= 7) {
+    for (const { name, grade } of grades) {
+        if (grade === maxGrade) {
+            console.log(`Student: ${name} - Grade: ${grade.toFixed(2)}`);
+        }
+    }
 } else {
     console.log("None of the students got a grade greater than 7.");
 }
