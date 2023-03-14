@@ -46,6 +46,27 @@ inForm.inBtList.addEventListener("click", () => {
 
 inForm.inBtListAge.addEventListener("click", () => {
     if (children.length > 0) {
+        // const sortedChildren = children.sort((a, b) => a.age - b.age);
+        // console.log(sortedChildren);
+
+        const groupAge = new Map();
+        let text = "";
+
+        for (const { name, age } of children) {
+            if (groupAge.has(age)) {
+                groupAge.get(age).push(name);
+            } else {
+                groupAge.set(age, [name]);
+            }
+        }
+
+        for (const [age, name] of groupAge.entries()) {
+            const percent = ((name.length / children.length) * 100).toFixed(1);
+            text += `${age} years: ${name.length} children - ${percent}% \n (${name})\n \n`;
+        }
+
+        outResponse.innerText = text;
+        console.log(groupAge);
     } else {
         outResponse.innerText = "There are no children in the list!";
     }
