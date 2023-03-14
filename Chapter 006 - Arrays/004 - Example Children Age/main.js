@@ -46,9 +46,6 @@ inForm.inBtList.addEventListener("click", () => {
 
 inForm.inBtListAge.addEventListener("click", () => {
     if (children.length > 0) {
-        // const sortedChildren = children.sort((a, b) => a.age - b.age);
-        // console.log(sortedChildren);
-
         const groupAge = new Map();
         let text = "";
 
@@ -61,7 +58,7 @@ inForm.inBtListAge.addEventListener("click", () => {
         }
 
         for (const [age, name] of groupAge.entries()) {
-            const percent = ((name.length / children.length) * 100).toFixed(1);
+            const percent = ((name.length / children.length) * 100).toFixed(2);
             text += `${age} years: ${name.length} children - ${percent}% \n (${name})\n \n`;
         }
 
